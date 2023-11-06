@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <sstream>
 
 /*
 Что нужно сделать :
@@ -56,16 +55,13 @@ int main()
 			std::cout << "Для добавления мяча укажите его артикль от 1 до "
 				<< BALLS_ARTICLES_COUNT << ": __\b\b";
 			std::cin >> userInput;
-			std::stringstream validator {userInput};
 
-			if (!(validator >> ballArticle))
-			{
-				std::cout << "Вы ввели не число.\n";
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
-			else if (ballArticle < 1 || ballArticle > BALLS_ARTICLES_COUNT)
+			if (std::cin.fail() || ballArticle < 1 || ballArticle > BALLS_ARTICLES_COUNT)
 			{
 				std::cout << "Неверный артикль мяча.\n";
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 			}
 			else
 			{
@@ -79,16 +75,13 @@ int main()
 			int ballArticle{};
 			std::cout << "Укажите артикль мячей от 1 до " << BALLS_ARTICLES_COUNT << ": __\b\b";
 			std::cin >> userInput;
-			std::stringstream validator {userInput};
-
-			if (!(validator >> ballArticle))
-			{
-				std::cout << "Вы ввели не число.\n";
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
-			else if (ballArticle < 1 || ballArticle > BALLS_ARTICLES_COUNT)
+						
+			if (std::cin.fail() || ballArticle < 1 || ballArticle > BALLS_ARTICLES_COUNT)
 			{
 				std::cout << "Неверный артикль мяча.\n";
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 			}
 			else
 			{
@@ -100,16 +93,13 @@ int main()
 			int ballArticle{};
 			std::cout << "Укажите артикль мячей от 1 до " << BALLS_ARTICLES_COUNT << ": __\b\b";
 			std::cin >> userInput;
-			std::stringstream validator {userInput};
 
-			if (!(validator >> ballArticle))
-			{
-				std::cout << "Вы ввели не число.\n";
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
-			else if (ballArticle < 1 || ballArticle > BALLS_ARTICLES_COUNT)
+			if (std::cin.fail() || ballArticle < 1 || ballArticle > BALLS_ARTICLES_COUNT)
 			{
 				std::cout << "Неверный артикль мяча.\n";
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 			}
 			else
 			{
